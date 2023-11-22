@@ -20,6 +20,9 @@ public class ProductDetailPage {
     @FindBy(css = ".showcart")
     private WebElement txt_topCart;
 
+    @FindBy(css=".message-success a")
+    private WebElement txt_linkShoppingCart;
+
     public ProductDetailPage(){
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
@@ -35,5 +38,6 @@ public class ProductDetailPage {
     public WebElement getTxt_addToCart(){return txt_addToCart;}
 
     public WebElement getTxt_topCart(){return txt_addToCart;}
+    public WebElement getTxt_linkShoppingCart(){return txt_linkShoppingCart;}
 
 }

@@ -1,18 +1,14 @@
 package Services;
 
-import DriverManager.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+public class CartPage {
+    private final Pages.CartPage cartPage;
 
-public class CartMenu {
-    private final Pages.CartMenu cartMenu;
+    public CartPage(){
 
-    public CartMenu(){
-
-        cartMenu = new Pages.CartMenu();
+        cartPage = new Pages.CartPage();
     }
 
 
     public void clickOnTxt_checkout() {
-        cartMenu.getTxt_checkout().click(); }
+        cartPage.getBtn_ProceedToCheckout().click(); }
     }

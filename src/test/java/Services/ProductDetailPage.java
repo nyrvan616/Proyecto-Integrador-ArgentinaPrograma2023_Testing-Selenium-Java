@@ -1,5 +1,11 @@
 package Services;
 
+import DriverManager.DriverManager;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 public class ProductDetailPage {
     private final Pages.ProductDetailPage productDetailPage;
 
@@ -16,6 +22,7 @@ public class ProductDetailPage {
     }
 
     public void setQuantity(CharSequence qty){
+        productDetailPage.getTxt_Quantity().clear();
         productDetailPage.getTxt_Quantity().sendKeys(qty);
     }
 
@@ -26,9 +33,10 @@ public class ProductDetailPage {
     public void clickOnTxt_addToCart(){
         productDetailPage.getTxt_addToCart().click();
     }
-
-    public void clickOnTxt_topCart() {
-        productDetailPage.getTxt_topCart().click();
+    public void clickOnTxt_linkShoppingCart(){
+        WebDriverWait wait = DriverManager.getWait();
+        wait.until(ExpectedConditions.visibilityOf(productDetailPage.getTxt_linkShoppingCart()));
+        productDetailPage.getTxt_linkShoppingCart().click();
     }
 
 }

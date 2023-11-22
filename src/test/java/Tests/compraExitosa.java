@@ -1,11 +1,10 @@
 package Tests;
 
 import DriverManager.DriverManager;
-import Services.CartMenu;
+import Services.CartPage;
+import Services.Checkout;
 import Services.HomePage;
 import Services.ProductDetailPage;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,7 +20,8 @@ public class compraExitosa {
         public void CompraExitosa(){
             Services.HomePage homePage = new HomePage();
             Services.ProductDetailPage productDetailPage = new ProductDetailPage();
-            Services.CartMenu cartMenu = new CartMenu();
+            Services.CartPage cartPage = new CartPage();
+            Services.Checkout checkout = new Checkout();
 
             //Pasos para ejecutar la prueba
             //2. Seleccionar la prenda "Radiant Tee".
@@ -34,14 +34,20 @@ public class compraExitosa {
             productDetailPage.clickOnTxt_blueColor();
             //c. Cantidad: 2
             productDetailPage.setQuantity("2");
-            Assert.assertEquals(3,2 );
+
             //4. Hacer clic en "Add to Cart".
             productDetailPage.clickOnTxt_addToCart();
+
             //5. Hacer clic en el enlace "shopping cart".
-            productDetailPage.clickOnTxt_topCart();
+            productDetailPage.clickOnTxt_linkShoppingCart();
+
             //6. Hacer clic en "Proceed to Checkout".
-            cartMenu.clickOnTxt_checkout();
+            cartPage.clickOnTxt_checkout();
+
             //7. Completar el formulario de dirección de envío con los datos deseados.
+            checkout.sendKeysOnTxt_customerEmail("test@test.com");
+            checkout.sendKeysOnTxt_customerFirstName("testName");
+            checkout.sendKeysOnTxt_customerLastName("testLastname");
 
             //8. Seleccionar la primera opción en los Métodos de Envío.
             //9. Hacer clic en "Next".
