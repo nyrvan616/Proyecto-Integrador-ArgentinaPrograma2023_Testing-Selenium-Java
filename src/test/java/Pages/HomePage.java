@@ -8,6 +8,7 @@ public class HomePage {
     @FindBy(xpath = "//img[@alt='Radiant Tee']")
     private WebElement txt_product;
 
+
     public HomePage(){
         PageFactory.initElements(DriverManager.getDriver(), this);
     }

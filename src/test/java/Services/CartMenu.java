@@ -10,5 +10,5 @@ public class CartMenu {
 
 
     public void clickOnTxt_checkout() {
-        cartMenu.getTxt_checkout().click(); };
+        cartMenu.getTxt_checkout().click(); }
     }

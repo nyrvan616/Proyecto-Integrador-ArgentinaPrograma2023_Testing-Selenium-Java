@@ -9,8 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.sql.Driver;
-
 public class compraExitosa {
 
         @BeforeMethod
@@ -48,9 +46,5 @@ public class compraExitosa {
             //8. Seleccionar la primera opción en los Métodos de Envío.
             //9. Hacer clic en "Next".
             //10. Hacer clic en "Place Order".
-        }
-
-        @AfterMethod
-        public void setdown(){
         }
 }
