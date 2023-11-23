@@ -9,6 +9,6 @@ public class CartPage {
     }
 
 
-    public void clickOnTxt_checkout() {
-        cartPage.getBtn_ProceedToCheckout().click(); }
+    public void clickOnBtn_proceedToCheckout() {
+        cartPage.getBtn_proceedToCheckout().click(); }
     }

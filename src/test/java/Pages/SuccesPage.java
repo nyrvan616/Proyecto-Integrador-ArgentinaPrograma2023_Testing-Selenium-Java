@@ -6,17 +6,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CartPage {
-    @FindBy(css = ".checkout > span")
-    private WebElement btn_proceedToCheckout;
+public class SuccesPage {
+    @FindBy(xpath = "//h1/span")
+    private WebElement txt_succesTitle;
 
-    public CartPage(){
+    public SuccesPage(){
 
         PageFactory.initElements(DriverManager.getDriver(), this);
 
     }
 
-    public WebElement getBtn_proceedToCheckout() {
-        return btn_proceedToCheckout;
+    public WebElement getTxt_succesTitle() {
+        return txt_succesTitle;
     }
 }

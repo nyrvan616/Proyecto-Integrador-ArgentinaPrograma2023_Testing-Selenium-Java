@@ -15,6 +15,7 @@ public class ProductDetailPage {
     }
 
     public void clickOnTxt_largeSize(){
+        DriverManager.getWaitUntilVisibility(productDetailPage.getTxt_largeSize());
         productDetailPage.getTxt_largeSize().click();
     }
     public void clickOnTxt_blueColor(){
