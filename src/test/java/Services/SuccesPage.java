@@ -14,7 +14,7 @@ public class SuccesPage {
     }
 
 
-    public void getTxt_succesTitle() {
-        succesPage.getTxt_succesTitle().getText();
+   public String getTxt_succesTitleText() {
+        return succesPage.getTxt_succesTitle().getText();
     }
-    }
+}

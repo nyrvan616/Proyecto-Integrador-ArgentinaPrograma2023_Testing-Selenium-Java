@@ -1,5 +1,3 @@
-package Tests;
-
 import DriverManager.DriverManager;
 import Services.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,13 +18,13 @@ public class compraExitosa {
 
         @Test
         public void CompraExitosa(){
-            Pages.SuccesPage succesPage2 = new Pages.SuccesPage();
             Services.HomePage homePage = new HomePage();
             Services.ProductDetailPage productDetailPage = new ProductDetailPage();
             Services.CartPage cartPage = new CartPage();
             Services.Checkout checkoutPage = new Checkout();
             Services.PaymentPage paymentPage = new PaymentPage();
-            Services.SuccesPage succesPage1 = new Services.SuccesPage();
+            Pages.SuccesPage succesPageElements = new Pages.SuccesPage();
+            Services.SuccesPage succesPageServices = new Services.SuccesPage();
 
             //Pasos para ejecutar la prueba
             //2. Seleccionar la prenda "Radiant Tee".
@@ -71,9 +69,9 @@ public class compraExitosa {
 
             //Validaciones
             //El titulo es igual a "Thank you for purchase!"
-            System.out.println(succesPage2.getTxt_succesTitle());
-            System.out.println(succesPage2.getTxt_succesTitle().getText());
-            Assert.assertEquals(succesPage2.getTxt_succesTitle().getText(), "Thank you for your purchase!");
+            DriverManager.getWaitUntilTextToBePresent(succesPageElements.getTxt_succesTitle(), "Thank you for your purchase!");
+            Assert.assertEquals(succesPageServices.getTxt_succesTitleText(), "Thank you for your purchase!");
+
             //- El boton "Continue Shopping" esta habilitado.
             //- El boton "Create an Account" esta visible.
             //- El nùmero de la orden (Your order # is:) es un numero (en la captura de
